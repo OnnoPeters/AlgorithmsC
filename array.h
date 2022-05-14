@@ -1,3 +1,6 @@
+#ifndef ARRAY
+#define ARRAY
+
 #include <malloc.h>
 
 void printArray(int arr[], int numElements)
@@ -85,3 +88,5 @@ void reverse(int arr[], int numElements)
         arr[numElements - (i + 1)] = tempHalfArray[i];
     }
 }
+
+#endif

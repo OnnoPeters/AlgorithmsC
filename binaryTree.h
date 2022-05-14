@@ -1,3 +1,6 @@
+#ifndef BINARY_TREE
+#define BINARY_TREE
+
 #include <malloc.h>
 #include <math.h>
 
@@ -194,4 +197,5 @@ TreeNode* createBinaryTreeFromArray(int arr[], int numElements)
     return root;
 }
 
+#endif
 
