@@ -89,4 +89,36 @@ void reverse(int arr[], int numElements)
     }
 }
 
+int partitionArray(int arr[], int leftIndex, int rightIndex)
+{
+    int pivotValue = arr[(rightIndex + leftIndex) / 2];
+    int i = leftIndex;
+    int j = rightIndex;
+    while(1)
+    {
+        while(arr[i] < pivotValue) i++;
+        while(arr[j] > pivotValue) j--;
+        if(i < j)
+        {
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+        }
+        else
+        {
+            return j;
+        }
+    }
+}
+
+void quicksort(int arr[], int leftIndex, int rightIndex)
+{
+    if(leftIndex >= 0 && rightIndex >= 0 && rightIndex > leftIndex)
+    {
+        int pivotIndex = partitionArray(arr, leftIndex, rightIndex);
+        quicksort(arr, leftIndex, pivotIndex);
+        quicksort(arr, pivotIndex + 1, rightIndex);
+    }
+}
+
 #endif
